@@ -1,8 +1,10 @@
-import express from "express";
-import helmet from "helmet";
-import cors from "cors";
-import morgan from "morgan";
-import { dbConnection } from "./mongo.js";
+import express from "express"
+import helmet from "helmet"
+import cors from "cors"
+import morgan from "morgan"
+import { dbConnection } from "./mongo.js"
+import userRoutes from "../routes/user.routes.js"
+import authRoutes from "../routes/auth.routes.js"
 
 const middlewares = (app) => {
     app.use(express.urlencoded({extended: false}))
@@ -12,7 +14,13 @@ const middlewares = (app) => {
     app.use(morgan("dev"))
 }
 
-const conectarDB = async () =>{
+const routes = async (app) =>{
+    app.use("/opinionsAdmin/v1/auth", authRoutes)
+    app.use("/opinionsAdmin/v1/user", userRoutes)
+}
+
+
+const connectDB = async () =>{
     try{
         await dbConnection()
     }catch(err){
@@ -25,7 +33,7 @@ export const initServer = () => {
     const app = express()
     try{
         middlewares(app)
-        conectarDB()
+        connectDB()
         routes(app)
         app.listen(process.env.PORT)
         console.log(`Server running on port ${process.env.PORT}`)
