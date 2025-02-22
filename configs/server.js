@@ -17,6 +17,9 @@ const middlewares = (app) => {
 const routes = async (app) =>{
     app.use("/opinionsAdmin/v1/auth", authRoutes)
     app.use("/opinionsAdmin/v1/user", userRoutes)
+    app.use("/opinionsAdmin/v1/publication", publicationRoutes)
+    app.use("/opinionsAdmin/v1/comment", commentRoutes)
+    
 }
 
 
