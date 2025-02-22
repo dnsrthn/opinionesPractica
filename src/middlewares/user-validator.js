@@ -2,8 +2,8 @@ import { body } from "express-validator"
 import { emailExists, userExists, usernameExists } from "../helpers/db-validators.js"
 import { handleErrors } from "./handleErrors.js"
 import { validateJWT } from "./validate-jwt.js"
-import { hasRoles } from "./validar-roles.js"
-import { validateFields } from "./validar-campos.js"
+import { hasRoles } from "./validate-role.js"
+import { validateFields } from "./validate-fields.js"
 import { deleteFileOnError } from "./delete-file-on-error.js"
 
 export const registerValidator = [
