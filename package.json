@@ -27,21 +27,16 @@
     "express": "^4.21.2",
     "express-validator": "^7.2.1",
     "helmet": "^8.0.0",
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     "morgan": "^1.10.0",
-    "nodemon": "^3.1.9"
-=======
+    "nodemon": "^3.1.9",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.10.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.10.1",
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1"
->>>>>>> users
-=======
-    "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.10.1",
-    "morgan": "^1.10.0",
-    "multer": "^1.4.5-lts.1"
->>>>>>> 6766e7ed4a59a5f4b3aff760cb42c551131a4214
-  }
+    }
 }
